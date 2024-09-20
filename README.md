@@ -1,52 +1,87 @@
-
 # Setup Docker Laravel 11 com PHP 8.3
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
 
-### Passo a passo
-Clone Repositório
-```sh
-git clone -b laravel-11-with-php-8.3 https://github.com/especializati/setup-docker-laravel.git app-laravel
-```
-```sh
-cd app-laravel
-```
+### Step by step
 
-Suba os containers do projeto
-```sh
-docker-compose up -d
-```
+Clone project
 
+Create .env file
 
-Crie o Arquivo .env
 ```sh
 cp .env.example .env
 ```
 
-Acesse o container app
+Upload project containers
+
 ```sh
-docker-compose exec app bash
+docker compose up -d
 ```
 
+Access app container
 
-Instale as dependências do projeto
+```sh
+docker compose exec app bash
+```
+
+> All inside container
+
+Install project dependencies
+
 ```sh
 composer install
 ```
 
-Gere a key do projeto Laravel
+Generate Laravel project key
+
 ```sh
 php artisan key:generate
 ```
 
-OPCIONAL: Gere o banco SQLite (caso não use o banco MySQL)
+OPTIONAL: Generate SQLite database (if you are not using MySQL)
+
 ```sh
 touch database/database.sqlite
 ```
 
-Rodar as migrations
+Run migrations
+
 ```sh
 php artisan migrate
 ```
 
-Acesse o projeto
+Access Project
 [http://localhost:8000](http://localhost:8000)
+
+# NOTES
+
+[Laravel e-commerce](https://www.youtube.com/watch?v=kR4fhanxOf4&list=PLm8sgxwSZofdmlPxaDB7fRLv_NVe2uFKl&ab_channel=WebTechKnowledge)
+[Laravel with NextJS](https://www.youtube.com/watch?v=Ri65-XNBtYA&ab_channel=Laravel)
+[Laravel Projects](https://laraveldaily.com/post/large-laravel-open-source-projects)
+[Youtube Laravel Channel](https://www.youtube.com/@eraufi/videos)
+
+### List commands with artisan
+
+```sh
+php artisan
+```
+
+## Authentication
+
+[Breeze Docs](https://laravel.com/docs/11.x/starter-kits#laravel-breeze)
+
+```sh
+composer require laravel/breeze --dev
+```
+
+Check the dependency instalation in compose.json and .lock
+
+Go to terminal to install with npm
+
+```sh
+npm install
+```
+
+Build files and generate manifest.json
+
+```sh
+npm run build
+```
